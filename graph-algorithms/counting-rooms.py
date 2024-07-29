@@ -43,10 +43,6 @@ class Graph:
         
         return count
 
-def seperate_characters(string: str) -> str:
-    sep_string = ','.join(string)
-    return sep_string
-
 def main():
     n,m = map(int, sys.stdin.readline().split())
     
@@ -54,8 +50,7 @@ def main():
     
     for line in sys.stdin.readlines():
         line = line.strip()
-        line = seperate_characters(line)
-        graph.append(line.split(','))
+        graph.append(list(line))
         
     g = Graph(n, m, graph)
     print(g.countRooms())
